@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Compile & Build Binary') {
+            parallel {
+                stage('build') {
+                    steps {
+                        echo "build"
+                     }
+                }
+                stage('test') {
+                    steps {
+                        echo "test"
+                    }
+                }
+            }
+        }
+    }
+}
